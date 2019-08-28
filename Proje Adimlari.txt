@@ -1,0 +1,40 @@
+--Proje.UI Açýlýr.
+--Proje.DAL Açýlýr.
+--Proje.BLL Açýlýr.
+--Proje.Model Açýlýr.
+
+--MSSQL ile çalýþýyorsak EntityFrameworkCore yüklemesi Yapýlýr. Eðer PostgreSQL kulanýyorsak npgsql.entityframeworkcore.Postgresql ve npgsql.entityframeworkcore.Postgresql.design  yüklenmeli.
+
+---DB Init Ýþlemleri---
+
+--Proje.Model içerisinde Entity bölümü oluþturulur.
+--Abstract klasöründeki base entity abstract classý oluþturulur.
+--Concrete klasörüne entityler açýlýr.
+--Basit tutmak için fluent api mapping eklenmemiþtir.
+
+--Proje.DAL içerisinde context tanýmlanýr.
+--Db init stratejileri core'da biraz deðiþti, isteyen, https://docs.microsoft.com/tr-tr/ef/core/managing-schemas/migrations/  dökümanýný inceleyebilir.
+--Context içerisinde ctor içerisinde tanýmlama yapýlýr. UI projesinde appsettings.json dosyasýnda conn string tanýmlanabilir. Startup.cs içerisinde tanýmlama yapýlýr.
+--Context tanýmlandýktan ve startup,appsettings iþlemleri bitince, console açýlmalýdýr.
+--"add-migration initialmigration" satýrý ile migration scripti oluþturuyoruz. Combobox üzerinden DAL seçmeyi unutmamalýyýz.
+--MSSQL için, EfCore NuGet paketinden ilerlediyseniz birkaç hata olacaktýr(Designer sýnýfýnda). Nuget üzerinden indirdiðiniz versiyona uygun olarak Microsoft.EntityFrameworkCore.SqlServer paketini de indirirseniz, bulunamayan kütüphane sorununuz ortadan kalkacaktýr.
+--migration scripti oluþtuktan sonra, console üzerinden "update-database migrationScriptAdý" veya tek migration scriptiniz varsa kýsaca update-database ile db init iþlemini tamamlayabilirsiniz.
+
+--Proje.DAL içerisinde Repo tanýmlýyoruz. BLL üzerinden çaðýracaðýz.
+--Repository store ve fetch iþlemlerinde kullanýldýðý için tamamen ayrýlabilir veya Data katmanýndan ilerleyebiliriz. BLL ise repository'e abstraction üzerinden (interface) eriþmelidir.SOLID gereksinimi olarak repolar business logic içermeyecek þekilde hazýrlanýr ancak dersteki süreyi de hesaba katmakta fayda var.
+--IQueryable ile çalýþmayý tercih etme nedenleri : IQueryable yerine enumerable kullanabilirsiniz. Queryable çok önerilmez ancak XML veya Json gibi dönüþler istiyorsak, performans için queryable olarak alabiliriz. Not: SOLID prensiplerine uygunluk açýsýndan Enumerable daha doðrudur. Her davranýþý çaðýrýþýmýzda tekrar tanýmlamak, kod tekrarý anlamýna gelecektir. LINQ-TO-SQL veya LINQ-TO-OBJECT tercihinize baðlýdýr. Queryable bize ifade aðacý(expression tree) döner ve çok daha performanslýdýr(Enumerable tüm datayý cacheler, ifade aðacý ise ORM tarafýndan direk sqle çevrilebilir halde çok daha küçük bir boyutta saklanýr.). Ancak tüm projemiz içerisinde toList() ile çalýþacaksak, sadece SOLID'e ters düþen bir yapý kurmuþ ve ekstra bir performans alamamýþ olacaðýmýzý hatýrlatayým.
+--EFRepository içerisinde tüm metotlarý dolduruyoruz. T : class olarak býraktýðýmdan dolayý, reflection ile Status atamasý yapabiliriz. Ýstenirse class yerine BaseEntity de tanýmlanabilir.
+--UnitOfWork mecburi deðildir. Saat durumunuza göre atlayabilir, save bölümünü repoya dahil edebilirsiniz.
+--Ýçerisindeki IDisposable mecburi deðildir. Açýklamasý yapýlmýþtýr.
+
+
+--Test Controller içerisinde temel crud iþlemleri için IRepository<Category> implementasyonu veya her ne kadar dbcontext baðýmlý olsa da  UserService _userRepository þeklinde BLL içerisinde user tanýmlanamasýna benzer bir geliþtirme yaparak tamamlayabilirsiniz.
+
+--UI Tasarýmý size kalmýþtýr.
+
+
+NOT: Db context sýnýfýndan instance almadýk gbi gözüküyor. Core içerisinde yaptýðýmýz tanýmlamadan dolayý, Core DI(Dependency Injection) ile context yaþam döngüsünü kotrol ediyor. Her istek geldiðinde bizim için context nesnesi oluþturuyor. Yapýcý metot içerisinde parametreden context alabilir veya startup sýnýfýnda yazdýgýmýz options kodunu istersek BaseController gibi bir tanýmlama içerisine taþýyarak kendi yaþam döngümüzü kontrol edebiliriz. Dispose bu amaçla eklendi ancak Core tarafýndan bize sunulan yapýyý bozmamak daha doðru geldi.
+
+
+
+

@@ -1,0 +1,215 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Bilge Adam\\Desktop\\BA_Project\\BAProject.BLL\\BAProject.BLL.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Bilge Adam\\Desktop\\BA_Project\\BAProject.BLL\\BAProject.BLL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Bilge Adam\\Desktop\\BA_Project\\BAProject.BLL\\BAProject.BLL.csproj",
+        "projectName": "BAProject.BLL",
+        "projectPath": "C:\\Users\\Bilge Adam\\Desktop\\BA_Project\\BAProject.BLL\\BAProject.BLL.csproj",
+        "packagesPath": "C:\\Users\\Bilge Adam\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Bilge Adam\\Desktop\\BA_Project\\BAProject.BLL\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Bilge Adam\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {
+              "C:\\Users\\Bilge Adam\\Desktop\\BA_Project\\BAProject.DAL\\BAProject.DAL.csproj": {
+                "projectPath": "C:\\Users\\Bilge Adam\\Desktop\\BA_Project\\BAProject.DAL\\BAProject.DAL.csproj"
+              },
+              "C:\\Users\\Bilge Adam\\Desktop\\BA_Project\\BAProject.Model\\BAProject.Model.csproj": {
+                "projectPath": "C:\\Users\\Bilge Adam\\Desktop\\BA_Project\\BAProject.Model\\BAProject.Model.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[2.1.11, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[2.1.1.1, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL.Design": {
+              "target": "Package",
+              "version": "[1.1.1, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "C:\\Users\\Bilge Adam\\Desktop\\BA_Project\\BAProject.DAL\\BAProject.DAL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Bilge Adam\\Desktop\\BA_Project\\BAProject.DAL\\BAProject.DAL.csproj",
+        "projectName": "BAProject.DAL",
+        "projectPath": "C:\\Users\\Bilge Adam\\Desktop\\BA_Project\\BAProject.DAL\\BAProject.DAL.csproj",
+        "packagesPath": "C:\\Users\\Bilge Adam\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Bilge Adam\\Desktop\\BA_Project\\BAProject.DAL\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Bilge Adam\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {
+              "C:\\Users\\Bilge Adam\\Desktop\\BA_Project\\BAProject.Model\\BAProject.Model.csproj": {
+                "projectPath": "C:\\Users\\Bilge Adam\\Desktop\\BA_Project\\BAProject.Model\\BAProject.Model.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[2.1.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[2.1.11, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[2.1.1.1, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL.Design": {
+              "target": "Package",
+              "version": "[1.1.1, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "C:\\Users\\Bilge Adam\\Desktop\\BA_Project\\BAProject.Model\\BAProject.Model.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Bilge Adam\\Desktop\\BA_Project\\BAProject.Model\\BAProject.Model.csproj",
+        "projectName": "BAProject.Model",
+        "projectPath": "C:\\Users\\Bilge Adam\\Desktop\\BA_Project\\BAProject.Model\\BAProject.Model.csproj",
+        "packagesPath": "C:\\Users\\Bilge Adam\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Bilge Adam\\Desktop\\BA_Project\\BAProject.Model\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Bilge Adam\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[2.1.11, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[2.1.1.1, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL.Design": {
+              "target": "Package",
+              "version": "[1.1.1, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}
